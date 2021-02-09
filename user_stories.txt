@@ -1,1 +1,26 @@
-Here is a user story!
+USER - user story (root_path)
+----------------------
+    Story 1 (FIRST VISIT)
+    ~~~~~~~~~~~~~~~~~~~~~
+    As a... NON-REGISTERED USER
+    I want to... view the main sign-up page 
+    So I can... Become a Registered user.
+
+    As a... REGISTERED USER
+    I want to... view the login-page
+    so I can... login to the CRM and get to work
+
+    As an... ADMIN-USER 
+    I want to... view the login page 
+    So I can... Login and perform admin actions
+
+    Story 2 (LOGIN SIGN UP)
+    ~~~~~~~~~~~~~~~~~~~~~~~
+    As a... NON-REGISTERED USER
+    I want to... be taken to main-dashboard upon sign up
+    so I can...begin working 
+
+
+
+COMPANY - user story (root_path/company)
+----------------------------------------
