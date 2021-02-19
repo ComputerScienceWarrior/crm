@@ -2,10 +2,8 @@ Rails.application.routes.draw do
 
   # STATIC ROUTES
   root "static#home"
-
   # SESSION ROUTES
   get '/login', to: "session#login"
-
   # USER ROUTES
   resources :user
   # COMPANY ROUTES
