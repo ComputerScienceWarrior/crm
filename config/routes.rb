@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   # STATIC ROUTES
   root "static#home"
+  get '/about-us', to: "static#about"
+  get '/services', to: "static#services"
   # SESSION ROUTES
   get '/login', to: "session#login"
   # USER ROUTES
