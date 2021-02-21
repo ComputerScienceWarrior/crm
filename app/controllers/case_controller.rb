@@ -6,4 +6,12 @@ class CaseController < ApplicationController
     def show
         @case = Case.find(params[:id])
     end
+
+    def new 
+        @case = Case.new
+    end
+
+    def create 
+        # logic to create a new case
+    end
 end
