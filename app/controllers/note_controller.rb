@@ -15,4 +15,16 @@ class NoteController < ApplicationController
         # logic to create a new note
     end
 
+    def edit 
+        @note = Note.find(params[:id])
+    end
+
+    def update
+        # logic to update a note
+    end
+
+    def destroy
+        # logic to destroy a note and it's associated resources.
+    end
+
 end
