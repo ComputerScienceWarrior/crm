@@ -14,8 +14,8 @@
 
   <body>
     <nav class="navbar navbar-dark bg-primary">
-      <a class="nav-item" href="#">Home</a>
-      <a class="nav-item" href="#">About Us</a>
+      <%= link_to "Home", root_path, class: "nav-item" %>
+      <%= link_to "About Us", about_us_path, class: "nav-item" %>
       <a class="nav-item" href="#">Service Packages</a>
     </nav>
     <%= yield %>
