@@ -1,0 +1,9 @@
+<%= form_for :users do |f| %>
+    <%= f.text_field :first_name, id: "first_name", placeholder: "Enter first Name" %><br/><br/>
+    <%= f.text_field :last_name, placeholder: "Enter last Name" %><br/><br/>
+    <%= f.text_field :username, placeholder: "Create first Name" %><br/><br/>
+    <%= f.text_field :password, type: "password", placeholder: "Create a password" %><br/><br/>
+    <%= f.text_field :password_conf, type: "password", placeholder: "Confirm password" %><br/><br/>
+    <%= f.text_field :email, placeholder: "example_jones@gmail.com" %><br/><br/>
+    <%= f.submit "Register"%>
+<% end %>
