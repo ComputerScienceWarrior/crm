@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # SESSION ROUTES
   get '/login', to: "session#login"
   get '/register', to: "session#new", as: "register"
+  post '/register', to: "session#create"
   # USER ROUTES
   resources :user
   # COMPANY ROUTES
