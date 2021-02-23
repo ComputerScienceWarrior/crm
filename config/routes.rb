@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/help', to: "static#help"
   # SESSION ROUTES
   get '/login', to: "session#login"
-  post '/login', to: "session#login"
+  post '/login', to: "session#create"
   get '/logout', to: "session#destroy"
   # USER ROUTES
   resources :user
