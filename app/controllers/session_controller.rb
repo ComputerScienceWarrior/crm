@@ -19,9 +19,4 @@ class SessionController < ApplicationController
         redirect_to login_path
     end
 
-    private
-
-    def user_params
-        params.require(:user).permit(:first_name, :last_name, :username, :password, :password_conf, :email, :company_id)
-    end
 end
