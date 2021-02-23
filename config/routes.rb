@@ -6,11 +6,9 @@ Rails.application.routes.draw do
   get '/services', to: "static#services"
   get '/help', to: "static#help"
   # SESSION ROUTES
-  get '/login', to: "session#new"
+  get '/login', to: "session#login"
   post '/login', to: "session#login"
   get '/logout', to: "session#destroy"
-  get '/register', to: "session#new", as: "register"
-  post '/register', to: "session#create"
   # USER ROUTES
   resources :user
   # COMPANY ROUTES
