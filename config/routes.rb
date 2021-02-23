@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get '/services', to: "static#services"
   get '/help', to: "static#help"
   # SESSION ROUTES
-  get '/login', to: "session#login"
+  get '/login', to: "session#new"
+  post '/login', to: "session#login"
   get '/logout', to: "session#destroy"
   get '/register', to: "session#new", as: "register"
   post '/register', to: "session#create"
