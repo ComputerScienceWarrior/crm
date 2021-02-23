@@ -1,0 +1,10 @@
+<%= form_for :users do |f| %>
+    <%= content_tag(:h1, "Register new user below") %>
+    <%= f.text_field :first_name, id: "first_name", placeholder: "Enter first Name" %><br/><br/>
+    <%= f.text_field :last_name, placeholder: "Enter last name" %><br/><br/>
+    <%= f.text_field :username, placeholder: "Create a username" %><br/><br/>
+    <%= f.text_field :password, type: "password", placeholder: "Create a password" %><br/><br/>
+    <%= f.text_field :password_conf, type: "password", placeholder: "Confirm password" %><br/><br/>
+    <%= f.text_field :email, placeholder: "example@gmail.com" %><br/><br/>
+    <%= f.submit "Register"%>
+<% end %>
