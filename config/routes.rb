@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "static#home"
   get '/about-us', to: "static#about"
   get '/services', to: "static#services"
+  get '/help', to: "static#help"
   # SESSION ROUTES
   get '/login', to: "session#login"
   get '/register', to: "session#new", as: "register"
