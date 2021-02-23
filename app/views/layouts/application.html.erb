@@ -20,7 +20,7 @@
       <% if session[:user_id] %>
         <%= link_to "Logout", logout_path, class: "nav-item" %>
       <% else %>
-        <p><%= link_to "Login", login_path, class: "nav-item"%> / <%= link_to "Register", register_path, class: "nav-item"%></p>
+        <p><%= link_to "Login", login_path, class: "nav-item"%> / <%= link_to "Register", new_user_path, class: "nav-item"%></p>
       <% end%>
     </nav>
     <%= yield %>
