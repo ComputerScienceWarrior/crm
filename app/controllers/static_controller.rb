@@ -8,4 +8,7 @@ class StaticController < ApplicationController
     def services
     end
 
+    def help
+    end
+
 end
