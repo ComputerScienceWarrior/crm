@@ -24,4 +24,10 @@ class CompanyController < ApplicationController
     def destroy
         # logic to destroy a company and their resources
     end
+
+    private 
+
+    def company_params
+        params.require(:company).permit(:name, :industry, :size, :price_plan)
+    end
 end
