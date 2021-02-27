@@ -1,18 +1,23 @@
 class StaticController < ApplicationController
+    before_action :set_page_titles
+
     def home
-        @page_title = "Home"
     end
 
     def about
-        @page_title = "About"
     end
     
     def services
-        @page_title = "Services"
     end
 
     def help
-        @page_title = "Help"
     end
+
+    private 
+
+    def set_page_titles
+        @page_title =  params[:action].capitalize
+    end
+
 
 end
