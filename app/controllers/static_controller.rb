@@ -16,7 +16,7 @@ class StaticController < ApplicationController
     private 
 
     def set_page_titles
-        @page_title =  params[:action].capitalize
+        @page_title = params[:action].capitalize
     end
 
 
