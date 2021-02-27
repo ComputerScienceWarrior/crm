@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
-    include SetPageTitle
-    include CurrentUser
+    SetPageTitle
+    CurrentUser
 end
