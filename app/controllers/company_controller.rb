@@ -3,6 +3,7 @@ class CompanyController < ApplicationController
     # does it makes sense to have an index of companies? Probably not. Maybe for Admin routes, 
     # but not stadard user routes
     # create a 'home route'
+    
     def show
     end
 
@@ -23,11 +24,17 @@ class CompanyController < ApplicationController
     end
 
     def update
-        # logic to update a companies information
+        if @company.update(company_params)
+            redirect_to company_path(@company)
+        else
+            render :edit
+        end
     end
 
     def destroy
-        # logic to destroy a company and their resources
+        @company.destroy_all
+        @company.destroy
+        redirect_to root_path
     end
 
     private 
