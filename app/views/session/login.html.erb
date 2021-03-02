@@ -1,5 +1,6 @@
 <%= form_for :user do |f| %>
-    <h2>Welcome back.<br/>Login below.</h2>
+<%= content_tag(:h2, "Welcome Back!")%>
+<%= content_tag(:h2, "Login Below.")%>
     <%= f.text_field :username, id: "username", placeholder: "Enter username" %><br/><br/>
     <%= f.text_field :password, type: "password", id: "password", placeholder: "Enter password" %><br/><br/>
     <%= f.submit "Login", class: "btn btn-primary"%>
