@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   resources :user
   # COMPANY ROUTES
   resources :company
-  # CLIENT ROUTES
-  resources :client
-  # CLIENT_CONTACT ROUTES
-  resources :client_contact
+  # CLIENT ROUTES AND NESTED CLIENT CONTACT ROUTES
+  resources :client do
+    resources :client_contact
+  end
   # NOTE ROUTES
   resources :note
   # CASE ROUTES
