@@ -26,4 +26,10 @@ class ClientContactController < ApplicationController
     def destroy
         # logic to destroy a resource
     end
+
+    private
+
+    def client_contact_params
+        params.require(:client).permit(:first_name, :last_name, :email, :phone, :title, :client_id)
+    end
 end
