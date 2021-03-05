@@ -11,10 +11,16 @@ class ClientController < ApplicationController
 
     def new
         @client = Client.new
+        # @client_contact = @client.client_contacts.build
     end
 
     def create
-        # logic to create a Client
+        @client = Client.new(client_params)
+        if @client.save
+            redirect_to client_path(@client)
+        else
+            render :new
+        end
     end
 
     def edit
@@ -37,4 +43,8 @@ class ClientController < ApplicationController
     def find_client
         @client = Client.find(params[:id])
     end
+
+    # def get_client
+
+    # end
 end
