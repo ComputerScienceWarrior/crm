@@ -27,10 +27,13 @@ class ClientController < ApplicationController
     end
 
     def update
-        # logic to update client information
+        @client.update(client_params)
     end
 
     def destroy
+        @client.client_contacts.destroy_all
+        @client.destroy
+        redirect_to root_path
         # logic to destroy a client and it's associations
     end
 
@@ -43,8 +46,5 @@ class ClientController < ApplicationController
     def find_client
         @client = Client.find(params[:id])
     end
-
-    # def get_client
-
-    # end
+    
 end
