@@ -1,10 +1,11 @@
 class ClientContactController < ApplicationController
+    before_action :find_client_contact, only: [:index, :show, :edit, :update, :destroy]
+    
     def index
         @client_contacts = ClientContact.all
     end
 
     def show
-        @client_contact = ClientContact.find(params[:id])
     end
 
     def new
@@ -16,7 +17,6 @@ class ClientContactController < ApplicationController
     end
 
     def edit
-        @client_contact = ClientContact.find(params[:id])
     end
 
     def update
@@ -31,5 +31,9 @@ class ClientContactController < ApplicationController
 
     def client_contact_params
         params.require(:client).permit(:first_name, :last_name, :email, :phone, :title, :client_id)
+    end
+
+    def find_client_contact
+        @client_contact = ClientContact.find(params[:id])
     end
 end
