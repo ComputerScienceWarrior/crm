@@ -1,6 +1,7 @@
 class ClientController < ApplicationController
 
     before_action :find_user, only: [:show, :edit, :update, :destroy]
+    before_action :is_guest?
 
     def index
         @clients = Client.all
@@ -11,7 +12,7 @@ class ClientController < ApplicationController
 
     def new
         @client = Client.new
-        # @client_contact = @client.client_contacts.build
+        @client.client_contacts.build
     end
 
     def create
@@ -34,7 +35,6 @@ class ClientController < ApplicationController
         @client.client_contacts.destroy_all
         @client.destroy
         redirect_to root_path
-        # logic to destroy a client and it's associations
     end
 
     private 
@@ -46,5 +46,5 @@ class ClientController < ApplicationController
     def find_client
         @client = Client.find(params[:id])
     end
-    
+
 end
