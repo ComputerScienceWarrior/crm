@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # COMPANY ROUTES
   resources :company
   # CLIENT ROUTES AND NESTED CLIENT CONTACT ROUTES
+  post '/client/new', to: "client#create"
   resources :client do
     resources :client_contact
   end
