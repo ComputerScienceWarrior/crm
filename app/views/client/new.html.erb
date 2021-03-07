@@ -1,0 +1,20 @@
+
+<%= form_for :client, path: new_client_path, id: "new-client-form" do |form_client| %>
+    <%= content_tag(:h2, "Create a new Client")%>
+    <%= form_client.text_field :name, placeholder: "Enter business name of Client"%><br/><br/>
+    <%= form_client.text_field :name, placeholder: "Enter business name of Client"%><br/><br/>
+    <%= form_client.text_field :name, placeholder: "Enter business name of Client"%><br/><br/>
+    
+    
+    <%= content_tag(:p) do %>
+        <%=content_tag(:h2, "Create a new contact for the Client")%>
+    <% end %>
+    <%= fields_for :client_contact do |form_client_contact| %>
+        <%= form_client_contact.text_field :first_name, id: "contact_first_name", placeholder: "Enter contact's first name" %><br/><br/>
+        <%= form_client_contact.text_field :last_name, id: "contact_last_name", placeholder: "Enter contact's last name" %><br/><br/>
+        <%= form_client_contact.email_field :email, id: "contact_email", placeholder: "Enter contact's email" %><br/><br/>
+        <%= form_client_contact.telephone_field :phone, id: "contact_phone", placeholder: "Enter contact's phone number" %><br/><br/>
+        <%= form_client_contact.text_field :title, id: "contact_title", placeholder: "Enter contact's title" %><br/><br/>
+    <% end %>
+    <%= form_client.submit "Create Client"%>
+<% end %>
