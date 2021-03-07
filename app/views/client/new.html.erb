@@ -2,22 +2,34 @@
 <%= form_for :client, path: new_client_path, id: "new-client-form" do |form_client| %>
     <%= content_tag(:h2, "Create a new Client")%>
     <%=content_tag(:label, "Client's Business name:")%><br/>
-    <%= form_client.text_field :name, placeholder: "Business Name?"%><br/>
+    <%= form_client.text_field :name, placeholder: "Enter Business Name"%><br/>
 
     <%=content_tag(:label, "Client's Business Size:")%><br/>
-    <%= form_client.text_field :name, placeholder: "# of employees?"%><br/>
+    <%= form_client.text_field :name, placeholder: "Number of employees"%><br/>
 
     <%=content_tag(:label, "Client's Industry:")%><br/>
-    <%= form_client.text_field :name, placeholder: "Client's industry?"%><br/>
+    <%= form_client.text_field :name, placeholder: "Clients Industry Name"%><br/>
     
     <%= content_tag(:p) do %>
         <%=content_tag(:h2, "Create a new contact for the Client")%>
     <% end %>
+
+    <hr/>
+
     <%= fields_for :client_contact do |form_client_contact| %>
-        <%= form_client_contact.text_field :first_name, id: "contact_first_name", placeholder: "Enter contact's first name" %><br/><br/>
-        <%= form_client_contact.text_field :last_name, id: "contact_last_name", placeholder: "Enter contact's last name" %><br/><br/>
-        <%= form_client_contact.email_field :email, id: "contact_email", placeholder: "Enter contact's email" %><br/><br/>
-        <%= form_client_contact.telephone_field :phone, id: "contact_phone", placeholder: "Enter contact's phone number" %><br/><br/>
+        <%=content_tag(:label, "Contact's first name:")%><br/>
+        <%= form_client_contact.text_field :first_name, id: "contact_first_name", placeholder: "Enter first name" %><br/>
+       
+        <%=content_tag(:label, "Contact's last name:")%><br/>       
+        <%= form_client_contact.text_field :last_name, id: "contact_last_name", placeholder: "Enter last name" %><br/>
+        
+        <%=content_tag(:label, "Contact's email:")%><br/>
+        <%= form_client_contact.email_field :email, id: "contact_email", placeholder: "Enter contact's email" %><br/>
+        
+        <%=content_tag(:label, "Contact's phone number:")%><br/>
+        <%= form_client_contact.telephone_field :phone, id: "contact_phone", placeholder: "Enter Phone number" %><br/>
+        
+        <%=content_tag(:label, "Title of contact (ex: CEO, Receptionist, etc.):")%><br/>
         <%= form_client_contact.text_field :title, id: "contact_title", placeholder: "Enter contact's title" %><br/><br/>
     <% end %>
     <%= form_client.submit "Create Client"%>
