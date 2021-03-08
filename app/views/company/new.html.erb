@@ -1,6 +1,6 @@
-<%= form_for :company do |f| %>
-    <%= f.text_field :name, placeholder: "Enter Business Name" %><br/><br/>
+<%= form_for :company, url: company_index_path do |f| %>
+    <%= f.label "The name of the Business or Individual" %><br/><%= f.text_field :name, placeholder: "Enter Business Name" %><br/><br/>
     <%= f.text_field :industry, placeholder: "Business Industry"  %><br/><br/>
-    <%= f.text_field :size, plceholder: "How many Employees?" %><br/><br/>
+    <%= f.text_field :size, placeholder: "How many Employees?" %><br/><br/>
     <%= f.submit "Create Company" %><br/>
 <% end %>
