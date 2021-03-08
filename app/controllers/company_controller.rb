@@ -1,8 +1,9 @@
 class CompanyController < ApplicationController
-    before_action :find_company, only: [:show, :create, :edit, :update, :destroy]
-    # does it makes sense to have an index of companies? Probably not. Maybe for Admin routes, 
-    # but not stadard user routes
-    # create a 'home route'
+    before_action :find_company, only: [:show, :edit, :update, :destroy]
+    
+    def index
+        @companies = Company.all
+    end
     
     def show
     end
