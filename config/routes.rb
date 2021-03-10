@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   # USER ROUTES
   resources :user
   # COMPANY ROUTES
-  resources :company
+  resources :company do
+    resources :user, only: [:new, :create]
+  end
   # CLIENT ROUTES AND NESTED CLIENT CONTACT ROUTES
   post '/client/new', to: "client#create"
   resources :client do
