@@ -9,11 +9,10 @@ Rails.application.routes.draw do
   get '/login', to: "session#login"
   post '/login', to: "session#create"
   get '/logout', to: "session#destroy"
-  # USER ROUTES
-  resources :user
-  # COMPANY ROUTES
+
+  # USER ROUTES && COMPANY ROUTES
   resources :company do
-    resources :user, only: [:new, :create]
+    resources :user
   end
   # CLIENT ROUTES AND NESTED CLIENT CONTACT ROUTES
   post '/client/new', to: "client#create"
