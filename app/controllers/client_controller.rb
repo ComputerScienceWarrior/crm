@@ -1,6 +1,6 @@
 class ClientController < ApplicationController
 
-    before_action :find_user, only: [:show, :edit, :update, :destroy]
+    before_action :find_client, only: [:show, :edit, :update, :destroy]
     before_action :is_guest?
 
     def index
