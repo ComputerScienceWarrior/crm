@@ -8,7 +8,7 @@ class SessionController < ApplicationController
         @user = User.find_by(username: params[:user][:username])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            redirect_to root_path
+            redirect_to company_path(Company.find(@user.company_id))
         else
             render :login
         end
