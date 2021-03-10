@@ -10,6 +10,7 @@ class CompanyController < ApplicationController
 
     def new
         @company = Company.new
+        @company.users.build
     end
 
     def create
@@ -41,7 +42,7 @@ class CompanyController < ApplicationController
     private 
 
     def company_params
-        params.require(:company).permit(:name, :industry, :size)
+        params.require(:company).permit(:name, :industry, :size, users_attributes: [:first_name, :last_name, :username, :password, :password_confirmation, :email, :company_id])
     end
 
     def find_company
