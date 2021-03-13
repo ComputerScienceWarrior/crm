@@ -17,6 +17,7 @@ class ClientController < ApplicationController
 
     def create
         @client = Client.new(client_params)
+        @client.company_id = session[:company_id]
         if @client.save
             redirect_to client_path(@client)
         else
@@ -40,7 +41,7 @@ class ClientController < ApplicationController
     private 
 
     def client_params
-        params.require(:client).permit(:name, :business, :size, :industry, :company_id)
+        params.require(:client).permit(:name, :business, :size, :industry, :company_id, client_contacts_attributes: [:first_name, :last_name, :email, :phone, :title, :client_id])
     end
 
     def find_client
