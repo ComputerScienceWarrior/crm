@@ -24,7 +24,18 @@ class NoteController < ApplicationController
     end
 
     def destroy
-        # logic to destroy a note and it's associated resources.
+        @note.destroy
+        redirect_to copmany_path(session[:company_id])
+    end
+
+    private
+
+    def find_note
+        @note = Note.find(params[:id])
+    end
+
+    def note_params
+        params.require(:note).permit(:subject, :content, :client_id, :user_id)
     end
 
 end
