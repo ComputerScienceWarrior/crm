@@ -8,16 +8,20 @@ Rails.application.routes.draw do
   # SESSION ROUTES
   get '/login', to: "session#login"
   post '/login', to: "session#create"
-  post '/logout', to: "session#destroy"
+  get '/logout', to: "session#destroy"
 
   # USER ROUTES && COMPANY ROUTES
   resources :company do
-    resources :user do
-      resources :notes
-    end
-    resources :client do
-      resources :notes
-    end
+    resources :user
+    resources :client
+  end
+
+  resources :user do
+    resources :notes
+  end
+
+  resources :client do
+    resources :notes
   end
   # CLIENT ROUTES AND NESTED CLIENT CONTACT ROUTES
   post '/client/new', to: "client#create"
