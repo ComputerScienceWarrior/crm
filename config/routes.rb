@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # SESSION ROUTES
   get '/login', to: "session#login"
   post '/login', to: "session#create"
-  get '/logout', to: "session#destroy"
+  post '/logout', to: "session#destroy"
 
   # USER ROUTES && COMPANY ROUTES
   resources :company do
