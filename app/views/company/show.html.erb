@@ -4,3 +4,8 @@
     <%= content_tag(:h4, "Swift Solutions CRM")%>
     <%= link_to "New Client", new_company_client_path(@company) %>
 <% end %>
+
+<h2>View All Clients!</h2>
+<% @company.clients.each do |client| %>
+    <%= link_to client.name, company_client_path(@company, client) %>
+<% end %>
