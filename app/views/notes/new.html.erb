@@ -1,0 +1,5 @@
+<%= form_for :note, url: "/client/#{@client.id}/notes" do |n| %>
+    <label>Subject: </label><%= n.text_field :subject %><br/><br/>
+    <label>Content: </label><%= n.text_area :content %><br/><br/>
+    <%= n.submit %>
+<% end %>
