@@ -5,11 +5,7 @@ module ApplicationHelper
                 content_tag(:a, "Login", href: login_path, class: "nav-item") + "/" + content_tag(:a, "Register Company", href: new_company_path, class: "nav-item")
             end
         else 
-            content_tag(:button, "Logout") do 
-                content_tag(:a, "Logout", href: logout_path, method: 'post', class: "nav-item")
-            end
+            content_tag(:a, "Logout", href: logout_path, method: 'post', class: "nav-item") + " " + content_tag(:p, "Logged in as #{current_user.username}.", id: 'logged-in-tag')
         end
-                
-            # content_tag(:p, "Logged in as #{current_user.username}.", id: 'logged-in-tag')
     end
 end
