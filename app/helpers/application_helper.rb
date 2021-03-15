@@ -8,4 +8,12 @@ module ApplicationHelper
             content_tag(:a, "Logout", href: logout_path, method: 'post', class: "nav-item") + " " + content_tag(:p, "Logged in as #{current_user.username}.", id: 'logged-in-tag')
         end
     end
+
+    def home_link
+        if session[:user_id].nil?
+            content_tag(:a, "Home", href: root_path, class: "nav-item")
+        else
+            content_tag(:a, "Home", href: company_path(current_user.company), class: "nav-item")
+        end
+    end
 end
