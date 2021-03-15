@@ -6,4 +6,6 @@ class Client < ApplicationRecord
     # has_many :cases, through: :user # is this valid / necessary?
     has_many :users, through: :notes
     has_many :users, through: :cases
+    extend FriendlyId
+    friendly_id :name, use: :slugged
 end
