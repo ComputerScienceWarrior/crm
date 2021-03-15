@@ -20,13 +20,10 @@ Rails.application.routes.draw do
     resources :notes
   end
 
-  resources :client do
-    resources :notes
-  end
   # CLIENT ROUTES AND NESTED CLIENT CONTACT ROUTES
-  post '/client/new', to: "client#create"
   resources :client do
     resources :client_contact
+    resources :notes
   end
   # CASE ROUTES
   resources :case
