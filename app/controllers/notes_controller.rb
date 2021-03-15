@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
     before_action :find_note, only: [:show, :edit, :update, :destroy]
     before_action :find_client, only: [:new]
+    before_action :define_user_and_client, only: [:create]
     def index
         @notes = Note.all
     end
@@ -13,10 +14,7 @@ class NotesController < ApplicationController
     end
 
     def create
-        @note = Note.new(note_params)
-        @note.user_id = current_user.id
-        @note.client_id = params[:client_id]
-        if @note.save
+        if @note.save!
             redirect_to company_path(current_company)
         else
             render :new
@@ -46,7 +44,14 @@ class NotesController < ApplicationController
     end
 
     def find_client
-        @client = Client.find(params[:client_id])
+        @client = Client.friendly.find(params[:client_id])
+    end
+
+    def define_user_and_client
+        @client = Client.friendly.find(params[:client_id])
+        @note = Note.new(note_params)
+        @note.user_id = current_user.id
+        @note.client_id = @client.id
     end
 
 end
