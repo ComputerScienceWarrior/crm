@@ -46,6 +46,6 @@ class CompanyController < ApplicationController
     end
 
     def find_company
-        @company = Company.find(params[:id])
+        @company = Company.friendly.find(params[:id])
     end
 end
