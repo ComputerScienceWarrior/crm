@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   # CLIENT ROUTES AND NESTED CLIENT CONTACT ROUTES
   resources :client do
-    resources :client_contact
+    resources :client_contacts
     resources :notes
   end
   # CASE ROUTES
