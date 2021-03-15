@@ -1,0 +1,24 @@
+<%= form_for @client_contact, url: "/client/:client_id/client_contacts/" do |form_client_contact| %>
+    <% if @client_contact.errors.any? %>
+        <ul>
+        <% @client_contact.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+    <% end %>
+    <%=content_tag(:label, "Contact's first name:")%><br/>
+    <%= form_client_contact.text_field :first_name, id: "contact_first_name", placeholder: "Enter first name" %><br/>
+    
+    <%=content_tag(:label, "Contact's last name:")%><br/>       
+    <%= form_client_contact.text_field :last_name, id: "contact_last_name", placeholder: "Enter last name" %><br/>
+    
+    <%=content_tag(:label, "Contact's email:")%><br/>
+    <%= form_client_contact.email_field :email, id: "contact_email", placeholder: "Enter contact's email" %><br/>
+    
+    <%=content_tag(:label, "Contact's phone number:")%><br/>
+    <%= form_client_contact.telephone_field :phone, id: "contact_phone", placeholder: "Enter Phone number" %><br/>
+    
+    <%=content_tag(:label, "Title of contact (ex: CEO, Receptionist, etc.):")%><br/>
+    <%= form_client_contact.text_field :title, id: "contact_title", placeholder: "Enter contact's title" %><br/><br/>
+    <%= form_client_contact.submit %>
+<% end %>
