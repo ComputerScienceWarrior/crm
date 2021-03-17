@@ -17,7 +17,7 @@ class ClientController < ApplicationController
 
     def create
         @client = Client.new(client_params)
-        @client.company_id = session[:company_id]
+        @client.company_id = current_company.id
         if @client.save
             redirect_to client_path(@client)
         else
