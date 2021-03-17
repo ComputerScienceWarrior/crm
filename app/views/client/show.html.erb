@@ -6,3 +6,8 @@
 <% @client.notes.each do |note| %>
     <%= note.content %><br/>
 <% end %>
+
+<h3>Clients Contacts</h3>
+<% @client.client_contacts.each do  |cc| %>
+    <%= link_to cc.first_name + " " + cc.last_name, client_client_contact_path(cc.client, cc) %>
+<% end %>
