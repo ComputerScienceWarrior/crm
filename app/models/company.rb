@@ -7,6 +7,7 @@ class Company < ApplicationRecord
 
     validates_presence_of :name, :industry, :size, :users, {message: " cannot be left blank."}
     validates :size, numericality: { only_integer: true }
+    validates :name, uniqueness: true
 
     extend FriendlyId
     friendly_id :name, use: :slugged
