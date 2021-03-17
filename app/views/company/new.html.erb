@@ -1,3 +1,4 @@
+<%= content_tag(:h1, "Register new Company and User")%>
 <%= form_for @company, url: company_index_path do |f| %>
     <% if @company.errors.any? %>
         <ul>
