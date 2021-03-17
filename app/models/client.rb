@@ -7,6 +7,7 @@ class Client < ApplicationRecord
     
     validates_presence_of :name, :size, :industry, :client_contacts, {message: " cannot be left blank."}
     validates :size, numericality: { only_integer: true }
+    validates :name, uniqueness: true
     
     extend FriendlyId
     friendly_id :name, use: :slugged
