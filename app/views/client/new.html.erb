@@ -1,5 +1,5 @@
 
-<%= form_for @client, path: new_client_path, url: "/company/:company_id/client/" , id: "new-client-form" do |form_client| %>
+<%= form_for @client, path: new_client_path, url: "/company/#{current_company.id}/client/" , id: "new-client-form" do |form_client| %>
     <% if @client.errors.any? %>
         <ul>
         <% @client.errors.full_messages.each do |msg| %>
@@ -23,7 +23,7 @@
 
     <hr/>
 
-    <%= form_client.fields_for :client_contact do |form_client_contact| %>
+    <%= form_client.fields_for :client_contacts do |form_client_contact| %>
         <%=content_tag(:label, "Contact's first name:")%><br/>
         <%= form_client_contact.text_field :first_name, id: "contact_first_name", placeholder: "Enter first name" %><br/>
        
