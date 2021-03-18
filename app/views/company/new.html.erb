@@ -1,18 +1,9 @@
 <%= content_tag(:h1, "Register new Company and User")%>
 <%= form_for @company, url: company_index_path do |f| %>
-    <% if @company.errors.any? %>
-        <ul>
-        <% @company.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-        </ul>
-    <% end %>
-
-    <%= f.text_field :name, placeholder: "Enter Business Name" %><br/><br/>
-    <%= f.text_field :industry, placeholder: "Business Industry"  %><br/><br/>
-    <%= f.text_field :size, placeholder: "How many Employees?" %><br/><br/>
+    <%= render 'form', f: f %>
     <hr>
     <%= content_tag(:h1, "Register new user below") %>
+
     <%= f.fields_for :users do |f| %>
         <%= render 'user/form', f: f%>
     <% end %>
