@@ -6,6 +6,7 @@
     <h3>Choose a client to edit:</h3>
     
     <%= link_to "Edit Company Info", edit_company_path(@company) %>
+    <%= link_to "Delete Company Account", company_path(@company), method: "delete", data: {confirm: "WARNING. THIS WILL REMOVE ALL INFORMATION RELATED\n TO COMPANY, REMOVING THE ACCOUNT...CONTINUE?"} %>
 <% end %>
 
 <h2>View All Clients!</h2>
