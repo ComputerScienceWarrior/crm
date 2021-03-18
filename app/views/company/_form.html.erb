@@ -1,0 +1,11 @@
+<% if @company.errors.any? %>
+    <ul>
+    <% @company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= f.text_field :name, placeholder: "Enter Business Name" %><br/><br/>
+<%= f.text_field :industry, placeholder: "Business Industry"  %><br/><br/>
+<%= f.text_field :size, placeholder: "How many Employees?" %><br/><br/>
