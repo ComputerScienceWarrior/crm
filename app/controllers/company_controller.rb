@@ -34,8 +34,10 @@ class CompanyController < ApplicationController
     end
 
     def destroy
-        @company.destroy_all
+        @company.users.destroy_all
+        @company.clients.destroy_all
         @company.destroy
+        reset_session
         redirect_to root_path
     end
 
