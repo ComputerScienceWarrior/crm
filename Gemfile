@@ -25,6 +25,7 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'pry'
 gem 'friendly_id', '~> 5.4.0'
 gem 'omniauth-google-oauth2'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
