@@ -24,8 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'pry'
 gem 'friendly_id', '~> 5.4.0'
-gem 'omniauth'
-gem 'omniauth-linkedin', '~> 0.2.0'
+gem 'omniauth-google-oauth2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -48,3 +47,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "omniauth-linkedin-oauth2", "~> 1.0"
