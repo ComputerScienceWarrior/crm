@@ -250,6 +250,7 @@ DEPENDENCIES
   friendly_id (~> 5.4.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  omniauth
   omniauth-linkedin (~> 0.2.0)
   pg (>= 0.18, < 2.0)
   pry
