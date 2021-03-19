@@ -24,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'pry'
 gem 'friendly_id', '~> 5.4.0'
+gem 'omniauth-linkedin', '~> 0.2.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
