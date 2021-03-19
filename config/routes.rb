@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/login', to: "session#login"
   post '/login', to: "session#create"
   get '/logout', to: "session#destroy"
+  get "auth/:provider/callback", to: "session#googleAuth"
+  get 'auth/failure', to: redirect('/')
 
   # USER ROUTES && COMPANY ROUTES
   resources :company do
