@@ -5,3 +5,5 @@
     <%= f.text_field :password, type: "password", id: "password", placeholder: "Enter password" %><br/><br/>
     <%= f.submit "Login", class: "btn btn-primary"%>
 <% end %>
+<hr>
+<%= link_to(image_tag("linkedin-signup.png"), '/auth/google_oauth2/callback') %><br><br>
