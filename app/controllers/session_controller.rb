@@ -15,10 +15,6 @@ class SessionController < ApplicationController
         end
     end
 
-    def googleAuth
-        
-    end
-
     def destroy
         reset_session
         redirect_to login_path
