@@ -1,0 +1,20 @@
+<% if @client.errors.any? %>
+    <ul>
+    <% @client.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+<%= content_tag(:h2, "Edit #{@client.name.pluralize} account.")%>
+<%=content_tag(:label, "Client's Business name:")%><br/>
+<%= f.text_field :name, placeholder: "Enter Business Name"%><br/>
+
+<%=content_tag(:label, "Client's Business Size:")%><br/>
+<%= f.text_field :size, placeholder: "Number of employees"%><br/>
+
+<%=content_tag(:label, "Client's Industry:")%><br/>
+<%= f.text_field :industry, placeholder: "Clients Industry Name"%><br/>
+
+<%= content_tag(:p) do %>
+    <%=content_tag(:h2, "Create a new contact for the Client")%>
+<% end %>

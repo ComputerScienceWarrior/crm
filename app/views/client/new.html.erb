@@ -1,29 +1,8 @@
-
-<%= form_for @client, path: new_client_path, url: "/company/#{current_company.id}/client/" , id: "new-client-form" do |form_client| %>
-    <% if @client.errors.any? %>
-        <ul>
-        <% @client.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-        </ul>
-    <% end %>
-    <%= content_tag(:h2, "Create a new Client")%>
-    <%=content_tag(:label, "Client's Business name:")%><br/>
-    <%= form_client.text_field :name, placeholder: "Enter Business Name"%><br/>
-
-    <%=content_tag(:label, "Client's Business Size:")%><br/>
-    <%= form_client.text_field :size, placeholder: "Number of employees"%><br/>
-
-    <%=content_tag(:label, "Client's Industry:")%><br/>
-    <%= form_client.text_field :industry, placeholder: "Clients Industry Name"%><br/>
-    
-    <%= content_tag(:p) do %>
-        <%=content_tag(:h2, "Create a new contact for the Client")%>
-    <% end %>
-
+<%= form_for @client, path: new_client_path, url: "/company/#{current_company.id}/client/" , id: "new-client-form" do |f| %>
+    <%= render 'form', f: f %>
     <hr/>
 
-    <%= form_client.fields_for :client_contacts do |form_client_contact| %>
+    <%= f.fields_for :client_contacts do |form_client_contact| %>
         <%=content_tag(:label, "Contact's first name:")%><br/>
         <%= form_client_contact.text_field :first_name, id: "contact_first_name", placeholder: "Enter first name" %><br/>
        
@@ -39,5 +18,5 @@
         <%=content_tag(:label, "Title of contact (ex: CEO, Receptionist, etc.):")%><br/>
         <%= form_client_contact.text_field :title, id: "contact_title", placeholder: "Enter contact's title" %><br/><br/>
     <% end %>
-    <%= form_client.submit "Create Client"%>
+    <%= f.submit "Create Client"%>
 <% end %>
