@@ -1,3 +1,10 @@
+<% if @user.errors.any? %>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
 <%= f.text_field :first_name, id: "first_name", placeholder: "Enter first Name" %><br/><br/>
 <%= f.text_field :last_name, placeholder: "Enter last name" %><br/><br/>
 <%= f.text_field :username, placeholder: "Create a username" %><br/><br/>
