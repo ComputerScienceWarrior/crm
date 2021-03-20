@@ -1,6 +1,7 @@
 <%= @client.name %>
 <%= link_to "New Note", new_client_note_path(@client) %>
 <%= link_to "New Contact", new_client_client_contact_path(@client) %>
+<%= link_to "Edit Client Information", edit_company_client_path(current_company, @client)%>
 
 <h3>Clients Notes</h3>
 <% @client.notes.each do |note| %>
