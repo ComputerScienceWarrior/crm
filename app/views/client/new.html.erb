@@ -1,4 +1,6 @@
+
 <%= form_for @client, path: new_client_path, url: "/company/#{current_company.id}/client/" , id: "new-client-form" do |f| %>
+    <%= content_tag(:h2, "Create a new client account.")%>
     <%= render 'form', f: f %>
     <hr/>
 
