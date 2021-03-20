@@ -1,0 +1,5 @@
+<%= form_for @user, path: company_user_path(@user.company, @user), method: :patch do |f| %>
+    <h4> Edit User information <h4/><br/>
+    <%= render 'form', f: f %>
+    <%= f.submit "Update User" %>
+<% end %>
