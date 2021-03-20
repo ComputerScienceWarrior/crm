@@ -1,9 +1,11 @@
 <%= content_tag(:h1, "Register new Company and User")%>
 <%= form_for @company, url: company_index_path do |f| %>
+    <%# partial with a local 'f' passed %>
     <%= render 'form', f: f %>
     <hr>
     <%= content_tag(:h1, "Register new user below") %>
 
+    <%# Nested fields to create user when creating a new company. %>
     <%= f.fields_for :users do |f| %>
         <%= render 'user/form', f: f%>
     <% end %>
