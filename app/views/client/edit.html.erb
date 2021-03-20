@@ -1,0 +1,4 @@
+<%= form_for @client, path: edit_company_client_path(current_company, @client), url: "/company/#{current_company.id}/client/#{@client.id}/" , id: "edit-client-form" do |f| %>
+    <%= render 'form', f: f %>
+    <%= f.submit %>
+<% end %>
