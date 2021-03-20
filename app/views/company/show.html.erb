@@ -1,11 +1,13 @@
 <%= content_tag(:h1, current_user.company.name)%>
 
 <%= content_tag(:p) do %>
-    <%= content_tag(:h4, "Swift Solutions CRM")%>
+    <%= content_tag(:h1, "Swift Solutions CRM")%>
     <%= link_to "New Client", new_company_client_path(@company) %>
     <h3>Choose a client to edit:</h3>
     
     <%= link_to "Edit Company Info", edit_company_path(@company) %>
+
+    <h3>Delete the Company account:</h3>
     <%= link_to "Delete Company Account", company_path(@company), method: "delete", data: {confirm: "WARNING. THIS WILL REMOVE ALL INFORMATION RELATED\n TO COMPANY, REMOVING THE ACCOUNT...CONTINUE?"} %>
 <% end %>
 
