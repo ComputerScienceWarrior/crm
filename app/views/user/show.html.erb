@@ -3,5 +3,6 @@
     <label>First Name: </label><%= @user.first_name %><br/>
     <label>Last Name: </label><%= @user.last_name %><br/>
     <label>Email Address: </label><%= @user.email %><br/>
-    <%= link_to "Edit your user information", edit_company_user_path(current_user.company, current_user)%>
+    <%= link_to "Edit your user information", edit_company_user_path(current_user.company, current_user)%><br/>
+    <%= link_to "Delete user account", company_user_path(current_user.company, current_user), method: :delete, data: {confirm: "Are you sure you want to delete your account?"} %>
 <% end %>
