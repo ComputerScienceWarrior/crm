@@ -1,5 +1,5 @@
 module ApplicationHelper
-    def is_logged_in?
+    def display_logout_or_login?
         if session[:user_id].nil?
             content_tag(:p) do 
                 content_tag(:a, "Login", href: login_path, class: "nav-item") + "/" + content_tag(:a, "Register Company", href: new_company_path, class: "nav-item")

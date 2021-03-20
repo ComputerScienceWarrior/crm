@@ -21,7 +21,7 @@
         <%= home_link %>
         <%= link_to "About Us", about_us_path, class: "nav-item" %>
         <%= link_to "Services", services_path, class: "nav-item" %>
-        <%= is_logged_in? %>
+        <%= display_logout_or_login? %>
       </nav>
     </header>
     <section>
