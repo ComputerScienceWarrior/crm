@@ -1,0 +1,7 @@
+<%= content_tag(:div, id: "user-info-card") do %>
+    <label>Username: </label><%= @user.username %><br/>
+    <label>First Name: </label><%= @user.first_name %><br/>
+    <label>Last Name: </label><%= @user.last_name %><br/>
+    <label>Email Address: </label><%= @user.email %><br/>
+    <%= link_to "Edit your user information", edit_company_user_path(current_user.company, current_user)%>
+<% end %>
