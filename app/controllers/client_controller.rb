@@ -29,7 +29,11 @@ class ClientController < ApplicationController
     end
 
     def update
-        @client.update(client_params)
+        if @client.update(client_params)
+            redirect_to company_client_path(@client.company, @client)
+        else
+            render :edit
+        end
     end
 
     def destroy
