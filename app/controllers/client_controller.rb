@@ -39,7 +39,7 @@ class ClientController < ApplicationController
     def destroy
         @client.client_contacts.destroy_all
         @client.destroy
-        redirect_to root_path
+        redirect_to company_path(current_company)
     end
 
     private 
