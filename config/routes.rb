@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   # STATIC ROUTES
   root "static#home"
   get '/about-us', to: "static#about"
