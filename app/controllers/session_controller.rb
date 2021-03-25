@@ -1,19 +1,19 @@
 class SessionController < ApplicationController
     
-    # def login
-    #     @user = User.new
-    # end
+    def login
+        @user = User.new
+    end
     
-    # def create
-    #     @user = User.find_by(username: params[:user][:username])
-    #     if @user && @user.authenticate(params[:user][:password])
-    #         session[:user_id] = @user.id
-    #         session[:company_id] = @user.company.id
-    #         redirect_to company_path(Company.find(@user.company_id))
-    #     else
-    #         render :login
-    #     end
-    # end
+    def create
+        @user = User.find_by(username: params[:user][:username])
+        if @user && @user.authenticate(params[:user][:password])
+            session[:user_id] = @user.id
+            session[:company_id] = @user.company.id
+            redirect_to company_path(Company.find(@user.company_id))
+        else
+            render :login
+        end
+    end
 
     def google_oauth2
          # Get access tokens from the google server
