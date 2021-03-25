@@ -21,7 +21,7 @@ class User < ApplicationRecord
           user.username = provider_data.info.name.split.join("-")
         end
         user.email = provider_data.info.email
-        user.password = Devise.friendly_token[0, 20] # password not provided by the providers, so we create our own
+        user.password = Devise.friendly_token[8, 20] # password not provided by the providers, so we create our own
       end
     end
 end
