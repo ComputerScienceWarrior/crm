@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    include DeviseWhitelist
     helper_method :current_user
     helper_method :is_guest?
     helper_method :current_company
