@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users, path: '', path_names: { sign_in: 'oauth/login', sign_out: 'oauth/logout', sign_up: 'oauth/register'}, controllers: {omniauth_callbacks: 'omniauth'}
+  devise_for :users, path: '', path_names: { sign_in: 'oauth_login', sign_out: 'oauth_logout', sign_up: 'oauth_register'}, controllers: {omniauth_callbacks: 'omniauth'}
   # STATIC ROUTES
   root "static#home"
   get '/about-us', to: "static#about"
