@@ -10,10 +10,10 @@ module ApplicationHelper
     # end
 
     def home_link
-        if session[:user_id].nil?
-            content_tag(:a, "Home", href: root_path, class: "nav-item")
-        else
+        if user_signed_in?
             content_tag(:a, "Home", href: company_path(current_user.company), class: "nav-item")
+        else
+            content_tag(:a, "Home", href: root_path, class: "nav-item")
         end
     end
 end
