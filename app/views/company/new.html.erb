@@ -1,5 +1,7 @@
 <%= content_tag(:h1, "Register new Company and User")%>
 <%= form_for @company, url: company_index_path do |f| %>
+    <%= content_tag(:h2, "Company information")%>
+
     <%# partial with a local 'f' passed %>
     <%= render 'form', f: f %>
     <hr>
