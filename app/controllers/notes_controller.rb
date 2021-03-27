@@ -30,7 +30,7 @@ class NotesController < ApplicationController
 
     def destroy
         @note.destroy
-        redirect_to copmany_path(session[:company_id])
+        redirect_to company_path(current_company)
     end
 
     private
