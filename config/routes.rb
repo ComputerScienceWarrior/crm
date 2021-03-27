@@ -6,10 +6,6 @@ Rails.application.routes.draw do
   get '/about-us', to: "static#about"
   get '/services', to: "static#services"
   get '/help', to: "static#help"
-  # SESSION ROUTES
-  get '/login', to: "session#login"
-  post '/login', to: "session#create"
-  get '/logout', to: "session#destroy"
 
   # USER ROUTES && COMPANY ROUTES
   resources :company do
