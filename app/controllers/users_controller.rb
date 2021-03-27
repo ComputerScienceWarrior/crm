@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
     before_action :find_user, only: [:index, :show, :edit, :update, :destroy]
 
     def index
