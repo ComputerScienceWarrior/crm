@@ -11,7 +11,7 @@ module ApplicationHelper
 
     def home_link
         if user_signed_in?
-            content_tag(:a, "Home", href: company_path(current_user.company), class: "nav-item")
+            content_tag(:a, current_company.name.pluralize.capitalize + " Home", href: company_path(current_company), class: "nav-item")
         else
             content_tag(:a, "Home", href: root_path, class: "nav-item")
         end
