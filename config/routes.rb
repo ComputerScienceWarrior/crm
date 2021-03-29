@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # USER ROUTES && COMPANY ROUTES
   resources :company do
-    resources :user
+    resources :users
     resources :client
   end
 
